@@ -8,6 +8,8 @@
         public double Price { get; set; }
         public int Stock { get; set; }
 
+        public Product() { }
+
         // Constructor
         public Product(int productID, string productName, double price, int stock)
         {

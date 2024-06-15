@@ -16,99 +16,145 @@ namespace ProductTest
         [SetUp]
         public void Setup()
         {
+
             _productInstance = new Product(21, "ProductName1", 55.5, 45);
         }
 
 
-        // TESTSCASES  FOR ATTRIBUTES
-
-        // Test for ProductID
+        // TEST CASES FOR ATTRIBUTES
+        // Test Product ID initial value is correct or not
         [Test]
-        public void Test_ProductID_ShouldHaveValidInitialValueOrNot()
+        public void Test_ProductID_InitialValue()
         {
+            // Assign
+            int expectedValue = 21;
+
+            // Act
+            int actualValue = _productInstance.ProductID;
+
             // Assert
-            Assert.That(_productInstance.ProductID, Is.EqualTo(21));
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
 
+        // Test Case for Product ID with minimum value
         [Test]
         public void Test_ProductID_WithMinimumValue()
         {
 
-            // Assign and Act 
-            _productInstance.ProductID = 1;
+            // Assign
+            int expectedMinValue = 1;
 
-            // Assert test 
-            Assert.That(_productInstance.ProductID, Is.EqualTo(1));
+            // Act
+            _productInstance.ProductID = expectedMinValue;
+            int actualMinValue = _productInstance.ProductID;
+
+            // Assert
+            Assert.That(actualMinValue, Is.EqualTo(expectedMinValue));
         }
 
+        // Test Case for Product ID with maximum value
         [Test]
         public void Test_ProductID_WithMaximumValue()
         {
 
-            // Assign and Act 
-            _productInstance.ProductID = 1000;
+            // Assign
+            int expectedMaxValue = 1000;
+
+            // Act
+            _productInstance.ProductID = expectedMaxValue;
+            int actualMaxValue = _productInstance.ProductID;
 
             // Assert
-            Assert.That(_productInstance.ProductID, Is.EqualTo(1000));
+            Assert.That(actualMaxValue, Is.EqualTo(expectedMaxValue));
         }
 
-        // TestCase for ProductName
+        // Test Case for Product name with initial value
         [Test]
-        public void Test_ProductName_ValidInitialValue()
+        public void Test_ProductName_InitialValue()
         {
 
-            // Assert 
-            Assert.That(_productInstance.ProductName, Is.EqualTo("ProductName1"));
+            // Assign
+            string expectedProductName = "ProductName1";
+
+            // Act
+            string actualProductName = _productInstance.ProductName;
+
+            // Assert
+            Assert.That(actualProductName, Is.EqualTo(expectedProductName));
         }
 
+        // Test Case for Product name with empty string
         [Test]
         public void Test_ProductName_WithEmptyString()
         {
+            // Assign
+            string expectedProductName = "";
 
-            // Assign & Act
-            _productInstance.ProductName = "";
+            // Act
+            _productInstance.ProductName = expectedProductName;
+            string actualProductName = _productInstance.ProductName;
 
             // Assert
-            Assert.That(_productInstance.ProductName, Is.EqualTo(""));
+            Assert.That(actualProductName, Is.EqualTo(expectedProductName));
         }
 
-        // TestCase for Product Price
+        // Test Case for Product price with initial value
         [Test]
-        public void Test_Price_ValidInitialValue()
+        public void Test_Price_InitialValueIsValidOrNot()
         {
+            // Assign
+            double expectedInitialValue = 55.5;
+
+            // Act
+            double actualInitialValue = _productInstance.Price;
+
             // Assert
-            Assert.That(_productInstance.Price, Is.EqualTo(55.5));
+            Assert.That(actualInitialValue, Is.EqualTo(expectedInitialValue));
         }
 
-        // TestCase for Price with minimum value
+        // Test Case for Product price with minimum value
         [Test]
-        public void Test_Price_WithMinimumValue()
+        public void Test_Price_MinimumValue()
         {
 
-            // Assign & Act
-            _productInstance.Price = 1.00;
+            // Assign
+            double expectedMinimumPrice = 1.00;
+
+            // Act
+            _productInstance.Price = expectedMinimumPrice;
+            double actualMinimumPrice = _productInstance.Price;
 
             // Assert
-            Assert.That(_productInstance.Price, Is.EqualTo(1.00));
+            Assert.That(actualMinimumPrice, Is.EqualTo(expectedMinimumPrice));
         }
 
-        // TestCase for Price with maximum value
+        // Test Case for Product price with maximum value
         [Test]
-        public void Test_Price_MaxValue()
+        public void Test_Price_MaximumValue()
         {
-            // Assign & Act
-            _productInstance.Price = 5000.0;
+            // Assign
+            double expectedMaximumPrice = 5000.0;
+
+            // Act
+            _productInstance.Price = expectedMaximumPrice;
+            double actualMaximumMaximum = _productInstance.Price;
 
             // Assert
-            Assert.That(_productInstance.Price, Is.EqualTo(5000.00));
+            Assert.That(actualMaximumMaximum, Is.EqualTo(expectedMaximumPrice));
         }
 
-        // TestCase for stock initial value
+        // TestCase for stock with initial value
         [Test]
-        public void Test_Stock_HaveValidInitialValueOrNot()
+        public void Test_Stock_InitialValue()
         {
+            // Assign
+            int expectedInitialStock = 45;
+
+            // Act
+            int actualInitialStock = _productInstance.Stock;
+
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(45));
+            Assert.That(actualInitialStock, Is.EqualTo(expectedInitialStock));
         }
 
         // TestCase for stock with minimum value
@@ -116,111 +162,162 @@ namespace ProductTest
         public void Test_Stock_WithMinimumValue()
         {
 
-            // Assign & Act
-            _productInstance.Stock = 1;
+            // Assign
+            int expectedStockMinValue = 1;
+
+            // Act
+            _productInstance.Stock = expectedStockMinValue;
+            int actualStockMinValue = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(1));
+            Assert.That(actualStockMinValue, Is.EqualTo(expectedStockMinValue));
         }
 
         // TestCase for stock with maximum value
         [Test]
         public void Test_Stock_MaxValue()
         {
+            // Assign
+            int expectedStockMaxValue = 1000;
 
-            // Assign & Act
-            _productInstance.Stock = 1000;
+            // Act
+            _productInstance.Stock = expectedStockMaxValue;
+            int actualStockMaxValue = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(1000));
+            Assert.That(actualStockMaxValue, Is.EqualTo(expectedStockMaxValue));
         }
 
 
-        // TESTS FOR INCREMENT METHODS
+        // TESTCASES FOR INCREMENT METHODS
 
         // Increases the stock by a valid/given value.
         [Test]
         public void Test_IncreaseStock_byValidValue()
         {
+
             // Assign
-            var increasedByValue = 10;
+            int increaseValue = 10;
+            int expectedIncresedValue = 45 + increaseValue;
 
-            // Assign & Act
-            _productInstance.IncreaseStock(increasedByValue);
+            // Act
+            _productInstance.IncreaseStock(increaseValue);
+            int actualValue = _productInstance.Stock;
 
-            // Assert 
-            Assert.That(_productInstance.Stock, Is.EqualTo(55));
+            // Assert
+            Assert.That(actualValue, Is.EqualTo(expectedIncresedValue)); 
         }
          
         // Increases the Stock Should Not Go Below Minimum Value which is 1
         [Test]
-        public void Test_IncreaseStock_LimitStockShouldNotGoBelowMinimumValue()
+        public void Test_IncreaseStock_ByNegativeValue_DoesNotChangeStock()
         {
+
             // Assign
-            var value = -1;
+            int increaseValue = -1;
+            int expectedValue = 45;
 
             // Act
-            _productInstance.IncreaseStock(value);
+            _productInstance.IncreaseStock(increaseValue);
+            int actualValue = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(45)); 
+            Assert.That(actualValue, Is.EqualTo(expectedValue)); // As we need to check that value should not change if we pass negative value
+        }
+
+
+        [Test]
+        public void Test_IncreaseStock_ByMinimumValue()
+        {
+            // Assign
+            int increaseValue = 1;
+            int expected = 45 + increaseValue;
+
+            // Act
+            _productInstance.IncreaseStock(increaseValue);
+            int actual = _productInstance.Stock;
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
       
-        public void Test_IncreaseStock_ShouldLimitStockToMaximumValue()
+        public void IncreaseStock_ToMaximumValue()
         {
             // Assign
-            var value = 955;
+            int increaseValue = 955;
+            int expectedIncresedStock = 1000; // We are Assuming 1000 is the maximum stock limit
 
             // Act
-            _productInstance.IncreaseStock(value);
+            _productInstance.IncreaseStock(increaseValue);
+            int actual = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(1000));
+            Assert.That(actual, Is.EqualTo(expectedIncresedStock));
         }
 
-        // Increases the Stock Should Not Go Below Minimum Value which is 1
+        // Increases the Stock Should Not Go Above Maximum Value which is 1000
         [Test]
         public void Test_IncreaseStock_LimitStockShouldNotGoAboveMaximumValue()
         {
-
             // Assign
-            var increaseValue = 955;
+            var initialStock = _productInstance.Stock;
+            var increaseValue = 1055; // Increase the stock by more than the maximum value
 
             // Act
             _productInstance.IncreaseStock(increaseValue);
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(1000));
+            Assert.That(_productInstance.Stock, Is.EqualTo(initialStock + 1000)); // Stock should not exceed 1000
         }
 
-        // TestCase for DecreaseStock by valid/given value
+        // TestCase for Decreases the stock by a valid value.
         [Test]
-        public void Test_DecreaseStock_NormalValue()
+        public void DecreaseStock_ByValidValue()
         {
             // Assign
-            var value = 10;
+            int decreaseStockValue = 10; // Value by which to decrease the stock
+            int expected = 45 - decreaseStockValue;
 
             // Act
-            _productInstance.DecreaseStock(value);
+            _productInstance.DecreaseStock(decreaseStockValue);
+            int actual = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(35)); // default value was 45
+            Assert.That(actual, Is.EqualTo(expected)); // Verify that the stock has decreased to the expected value - 35
         }
 
-        // Test case for DecreaseStock method ensuring stock does not go below minimum value (0)
+        // TestCase for Decrease Stock up To Zero
         [Test]
-        public void Test_DecreaseStock_LimitStockShouldNotGoBelowMinimumValue()
+        public void Test_DecreaseStock_ToZero()
         {
             // Assign
-            var value = 45;
+            int decreaseValue = 45;
+            int expected = 0;
 
             // Act
-            _productInstance.DecreaseStock(value);
+            _productInstance.DecreaseStock(decreaseValue);
+            int actual = _productInstance.Stock;
 
             // Assert
-            Assert.That(_productInstance.Stock, Is.EqualTo(0)); 
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        // Testing that the stock does not go below zero.
+        [Test]
+        public void Test_DecreaseStock_StockDoesNotGoBelowZero()
+        {
+            // Assign
+            int decreaseValue = 55;
+            int expected = 0; // Stock should not go below zero
+
+            // Act
+            _productInstance.DecreaseStock(decreaseValue);
+            int actual = _productInstance.Stock;
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         // Test case for DecreaseStock method ensuring stock does not go below minimum value (45)
@@ -236,6 +333,7 @@ namespace ProductTest
             // Assert
             Assert.That(_productInstance.Stock, Is.EqualTo(45)); 
         }
+
     }
 }
 
