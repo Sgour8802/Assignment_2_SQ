@@ -22,7 +22,7 @@ namespace ProductTest
 
 
         // TEST CASES FOR ATTRIBUTES
-        // Test Product ID initial value is correct or not
+        // Test Product ID with initial value 
         [Test]
         public void Test_ProductID_InitialValue()
         {
