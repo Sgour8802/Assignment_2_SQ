@@ -2,15 +2,15 @@
 {
     public class Product
     {
-        // Properties
+        // Variables and properties
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public double Price { get; set; }
         public int Stock { get; set; }
 
-        public Product() { }
+        public Product() { } 
 
-        // Constructor
+ 
         public Product(int productID, string productName, double price, int stock)
         {
             ProductID = productID;
