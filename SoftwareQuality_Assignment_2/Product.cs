@@ -17,7 +17,7 @@
             ProductName = productName;
             Price = price;
             Stock = stock;
-        }
+        } 
 
 
         // Method to increase stock

@@ -114,7 +114,7 @@ namespace ProductTest
 
         // Test Case for Product price with minimum value
         [Test]
-        public void Test_Price_MinimumValue()
+        public void Test_Price_WithMinimumValue()
         {
 
             // Assign
@@ -130,7 +130,7 @@ namespace ProductTest
 
         // Test Case for Product price with maximum value
         [Test]
-        public void Test_Price_MaximumValue()
+        public void Test_Price_WithMaximumValue()
         {
             // Assign
             double expectedMaximumPrice = 5000.0;
@@ -146,7 +146,7 @@ namespace ProductTest
         // TEST CASES FOR METHODS - Increase AND Decrease
         // TestCase for stock with initial value
         [Test]
-        public void Test_Stock_InitialValue()
+        public void Test_Stock_WithInitialValue()
         {
             // Assign
             int expectedInitialStock = 45;
